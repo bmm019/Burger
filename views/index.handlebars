@@ -4,7 +4,7 @@
     	<h3 class="heading">MENU</h3>
         {{#each burgers}} 
         	{{#unless this.devoured}} 
-		        <form class="eat-form form-group" action="/{{this.id}}?_method=PUT" method="POST">
+		        <form class="change-devoured">
 		        	{{this.burger_name}}
 		            <input type="hidden" name="eat" value="true">
 		            <input type="image" class="eat-icon" src="assets/img/eat.png" alt="eat icon"/>
@@ -29,7 +29,7 @@
         <div class="list-group">
             {{#each burgers}} 
             	{{#if this.devoured}}
-            		<form class="delete-form form-group" action="/{{this.id}}?_method=DELETE" method="POST">
+            		<form class="delete-form form-group">
             			{{this.burger_name}}
             			<input type="image" class="trash-icon" src="assets/img/trash.png" alt="trash icon"/>
 					</form>
